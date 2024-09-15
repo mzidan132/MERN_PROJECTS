@@ -29,9 +29,12 @@ const Register = () => {
         email: inputs.email,
         password: inputs.password,
       });
-      if (data.success) {
-        toast.success("User Register Successfully");
-        navigate("/login");
+       if (data.success) {
+         toast.success("User Register Successfully");
+        localStorage.setItem("userId", data?.user._id);
+        dispatch(authActions.login());
+        toast.success("User login Successfully");
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
