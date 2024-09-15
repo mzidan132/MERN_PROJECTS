@@ -4,9 +4,7 @@
   "description": "blog app",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix ./client"
+    "start": "node server.js"
   },
   "author": "techinfoyt",
   "license": "ISC",
