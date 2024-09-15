@@ -23,8 +23,6 @@ const Header = () => {
   const navigate = useNavigate();
   // state
   const [value, setValue] = useState();
-  const [currentTheme, setCurrentTheme] = useState('dark');
-
   // logout
   const handleLogout = () => {
     try {
@@ -35,20 +33,6 @@ const Header = () => {
     } catch (error) {
       console.log(error);
     }
-  };
-
-  useEffect(() => {
-    // Load the theme from localStorage when the component mounts
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-bs-theme', savedTheme);
-    setCurrentTheme(savedTheme);
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-bs-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    setCurrentTheme(newTheme);
   };
 
   return (
