@@ -3,8 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { Box, Typography, TextField, Button } from "@mui/material";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { authActions } from "../redux/store";
 const Register = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   //state
   const [inputs, setInputs] = useState({
     name: "",
@@ -33,7 +36,6 @@ const Register = () => {
          toast.success("User Register Successfully");
         localStorage.setItem("userId", data?.user._id);
         dispatch(authActions.login());
-        toast.success("User login Successfully");
         navigate("/");
       }
     } catch (error) {
