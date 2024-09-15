@@ -87,7 +87,9 @@ export default function BlogCard({
           Description: {description}
         </Typography>
         <Button onClick={handleComments} variant="contained" color="primary" sx={{ mt: 2 }}>
-          View Comments {exist&&'*'}
+          View Comments {exist&&<div class="spinner-grow spinner-grow-sm" role="status">
+  <span class="visually-hidden"></span>
+</div>}
         </Button>
       </CardContent>
     </Card>
