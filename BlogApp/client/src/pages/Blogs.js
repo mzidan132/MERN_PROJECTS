@@ -9,7 +9,7 @@ const Blogs = () => {
   // Fetch all blogs
   const getAllBlogs = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8000/api/v1/blog/all-blog");
+      const { data } = await axios.get("https://mern-projects-gs9u.onrender.com/api/v1/blog/all-blog");
       if (data?.success) {
         setBlogs(data?.blogs);
       }
