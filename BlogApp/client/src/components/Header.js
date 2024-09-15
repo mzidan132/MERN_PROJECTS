@@ -8,12 +8,12 @@ import {
   Typography,
   Tabs,
   Tab,
-  IconButton,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../redux/store";
 import toast from "react-hot-toast";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Header = () => {
   // global state
@@ -23,6 +23,7 @@ const Header = () => {
   const navigate = useNavigate();
   // state
   const [value, setValue] = useState();
+
   // logout
   const handleLogout = () => {
     try {
@@ -35,11 +36,26 @@ const Header = () => {
     }
   };
 
+  // Use media query to detect small screens
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   return (
     <AppBar position="sticky">
-      <Toolbar>
+      <Toolbar
+        sx={{
+          paddingLeft: isMobile && "0", // Adjust horizontal padding for mobile
+          paddingRight: isMobile && "0",
+
+        }}
+      >
         <Typography variant="h4">
-          <Link to = '/'><img src='/pngegg.png' style={{ width: 70, height: 50, cursor:'pointer' }} alt="Logo" /></Link>
+          <Link to="/">
+            <img
+              src="/pngegg.png"
+              style={{ width: 70, height: 50, cursor: "pointer" }}
+              alt="Logo"
+            />
+          </Link>
         </Typography>
         {isLogin && (
           <Box display="flex" flexGrow={1} justifyContent="center">
@@ -47,11 +63,17 @@ const Header = () => {
               textColor="inherit"
               value={value}
               onChange={(e, val) => setValue(val)}
+              sx={{
+                "& .MuiTab-root": {
+                  fontSize: isMobile && "12px", // Adjust font size for Tabs
+                  color: 'white'
+                },
+                padding: 0, marginLeft: 0,
+              }}
             >
-              
               <Tab label="My Blogs" component={Link} to="/my-blogs" />
               <Tab label="Create Blog" component={Link} to="/create-blog" />
-              </Tabs>
+            </Tabs>
           </Box>
         )}
         <Box display="flex" alignItems="center">
@@ -66,7 +88,7 @@ const Header = () => {
             </>
           )}
           {isLogin && (
-            <Button onClick={handleLogout} sx={{ margin: 1, color: "white" }}>
+            <Button onClick={handleLogout} sx={{ margin: 1, color: "red" }}>
               Logout
             </Button>
           )}
@@ -77,3 +99,4 @@ const Header = () => {
 };
 
 export default Header;
+
