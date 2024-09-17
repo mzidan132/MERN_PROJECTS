@@ -39,7 +39,7 @@ const CreateBlog = () => {
         const imageUrl = imageUploadResponse.data.data.url;
 
         const { data } = await axios.post(
-          "https://mern-projects-gs9u.onrender.com/api/v1/blog/create-blog",
+          "https://mern-projects-fo6a.onrender.com/api/v1/blog/create-blog",
           {
             title: inputs.title,
             description: inputs.description,
