@@ -20,7 +20,7 @@ const app = express();
 
 //middelwares
 app.use(cors({
-    origin: 'https://blogapp-bd.vercel.app', // replace with your frontend domain
+    origin: 'https://blogapp-bd.vercel.app/', // replace with your frontend domain
     credentials: true
 }));
 app.use(express.json());
