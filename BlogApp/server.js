@@ -19,7 +19,10 @@ connectDB();
 const app = express();
 
 //middelwares
-app.use(cors());
+app.use(cors({
+    origin: 'https://mern-projects-rose.vercel.app', // replace with your frontend domain
+    credentials: true
+}));
 app.use(express.json());
 app.use(morgan("dev"));
 
