@@ -16,7 +16,7 @@ const BlogDetails = () => {
   // Fetch blog details
   const getBlogDetail = async () => {
     try {
-      const { data } = await axios.get(`https://mern-projects-gs9u.onrender.com/api/v1/blog/get-blog/${id}`);
+      const { data } = await axios.get(`https://mern-projects-fo6a.onrender.com/api/v1/blog/get-blog/${id}`);
       if (data?.success) {
         setBlog(data?.blog);
         setInputs({
@@ -73,7 +73,7 @@ const BlogDetails = () => {
     }
 
     try {
-      const { data } = await axios.put(`https://mern-projects-gs9u.onrender.com/api/v1/blog/update-blog/${id}`, {
+      const { data } = await axios.put(`https://mern-projects-fo6a.onrender.com/api/v1/blog/update-blog/${id}`, {
         title: inputs.title,
         description: inputs.description,
         image: imageUrl,
