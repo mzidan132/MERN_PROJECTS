@@ -28,6 +28,10 @@ app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/blog", blogRoutes);
 app.use("/api/v1/comment",commentRoutes)
 // Port
+app.get("/", (req, res) => {
+    res.send('Api Working')
+})
+
 const PORT = process.env.PORT || 8080;
 //listen
 app.listen(PORT, () => {
