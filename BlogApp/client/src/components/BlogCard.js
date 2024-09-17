@@ -32,7 +32,7 @@ export default function BlogCard({
 
   const handleDelete = async () => {
     try {
-      const { data } = await axios.delete(`https://mern-projects-gs9u.onrender.com/api/v1/blog/delete-blog/${id}`);
+      const { data } = await axios.delete(`https://mern-projects-fo6a.onrender.com/api/v1/blog/delete-blog/${id}`);
       if (data?.success) {
         toast.success("Blog Deleted");
         window.location.reload();
