@@ -23,7 +23,7 @@ const port = 8000
 //middleware
 app.use(express.json())
 app.use(cors({
-    origin: '*', // replace with your frontend domain
+    origin: process.env.FRONTEND_URL, // replace with your frontend domain
     credentials: true
 }));
 //frontend backend port connect
