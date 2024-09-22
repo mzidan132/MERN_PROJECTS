@@ -5,7 +5,7 @@ const ExploreMenu = ({category,setCategory}) => { //color menu tomato kore round
   return (
     <div className='explore-menu' id='explore-menu'>
         <h1>Explore Our Menu</h1>
-        <p className='explore-menu-text'>Choose from a diverse menu featuring a delightable array of dishses crafted with the finest ingredients and culinary expertise. Our mission is to satisfy your cravings and elevate your dining exprience, one delicios meal.</p>
+        
         <div className="explore-menu-list">
             {menu_list.map((item,index)=>{
                 return (
