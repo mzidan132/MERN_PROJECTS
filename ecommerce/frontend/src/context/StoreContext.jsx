@@ -9,7 +9,7 @@ const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     
     // Defines the base URL for the API
-    const url = "https://food-delivery-liard-ten.vercel.app";
+    const url = import.meta.env.VITE_BACKEND_URL;
     
     // Initializes state for the authentication token as an empty string
     const [token, setToken] = useState("");
