@@ -14,21 +14,21 @@ const Header = () => {
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active" data-bs-interval="3000">
-      <img src={assets.foods} style={{width:700,height:400}} className="d-block mx-auto img-fluid" alt="..." />
+      <img src={assets.foods} style={{width:1000,height:400}} className="d-block mx-auto img-fluid" alt="..." />
       <div className="carousel-caption d-none d-md-block">
         <h5></h5>
         <p></p>
       </div>
     </div>
     <div className="carousel-item" data-bs-interval="2000">
-      <img src={assets.food} style={{width:700,height:400}}  className="d-block mx-auto img-fluid" alt="..." />
+      <img src={assets.food} style={{width:1000,height:400}}  className="d-block mx-auto img-fluid" alt="..." />
       <div className="carousel-caption d-none d-md-block">
         <h5></h5>
         <p></p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src={assets.header_img} style={{width:700,height:400}}  className="d-block mx-auto img-fluid" alt="..." />
+      <img src={assets.header_img} style={{width:1000,height:400}}  className="d-block mx-auto img-fluid" alt="..." />
       <div className="carousel-caption d-none d-md-block">
         <h5></h5>
         <p></p>
