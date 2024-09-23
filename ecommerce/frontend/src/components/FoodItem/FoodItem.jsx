@@ -23,9 +23,9 @@ export const FoodItem = ({ id, name, price, description, image }) => {
           !cartItems[id]
             ? <img className='add' onClick={() => addToCart(id)} src={assets.add_icon_white} />
             : <div className='food-item-counter'>
-              <img onClick={() => removeFromCart(id)} src={assets.remove_icon_red} />
+              <img style={{cursor:'pointer'}} onClick={() => removeFromCart(id)} src={assets.remove_icon_red} />
               <p>{cartItems[id]}</p> {/* add to db */}
-              <img onClick={() => addToCart(id)} src={assets.add_icon_green} />
+              <img style={{cursor:'pointer'}} onClick={() => addToCart(id)} src={assets.add_icon_green} />
             </div>
         }
       </div>
