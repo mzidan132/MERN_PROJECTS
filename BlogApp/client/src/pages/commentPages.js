@@ -18,7 +18,7 @@ const CommentsPage = () => {
     setBlogId(id);
     const fetchComments = async () => {
       try {
-        const { data } = await axios.get(`https://mern-projects-fo6a.onrender.com/api/v1/comment/get-comments/${id}`);
+        const { data } = await axios.get(`https://mern-projects-pod1.vercel.app/api/v1/comment/get-comments/${id}`);
         setComments(data.comments);
       } catch (error) {
         console.log(error);
@@ -35,7 +35,7 @@ const CommentsPage = () => {
   // Add a new comment
   const handleAddComment = async () => {
     try {
-      const { data } = await axios.post('https://mern-projects-fo6a.onrender.com/api/v1/comment/add-comment', {
+      const { data } = await axios.post('https://mern-projects-pod1.vercel.app/api/v1/comment/add-comment', {
         text: commentText,
         user: userId,
         blog: blogId,
@@ -51,7 +51,7 @@ const CommentsPage = () => {
   };
   const handleDeleteComment = async (commentId) => {
     try {
-      const { data } = await axios.delete(`https://mern-projects-fo6a.onrender.com/api/v1/comment/delete-comment/${commentId}`);
+      const { data } = await axios.delete(`https://mern-projects-pod1.vercel.app/api/v1/comment/delete-comment/${commentId}`);
       if (data.success) {
         setComments((prevComments) => prevComments.filter((comment) => comment._id !== commentId));
         toast.success('Comment deleted successfully');
